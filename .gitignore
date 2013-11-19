@@ -1,0 +1,11 @@
+sqlite_database
+*.pyc
+src/
+static/*
+media/*
+!.gitkeep
+.sass-cache/
+tmp/
+settings_local.py
+build/
+backups/
