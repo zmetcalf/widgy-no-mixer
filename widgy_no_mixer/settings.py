@@ -99,7 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.admin',
+    'django.contrib.comments',
 
     'debug_toolbar',
     'south',
@@ -108,13 +108,16 @@ INSTALLED_APPS = (
     'widgy.contrib.form_builder',
     'widgy.contrib.review_queue',
 
+    'django.contrib.admin',
+
     'filer',
     'easy_thumbnails',
     'compressor',
     'scss',
     'sorl.thumbnail',
     'require',
-
+    'django_extensions',
+    'argonauts',
 )
 
 WIDGY_MEZZANINE_SITE = 'widgy_no_mixer.widgy_site.site'
@@ -177,3 +180,12 @@ LOGGING = {
 INTERNAL_IPS = (
     '127.0.0.1',
 )
+
+ADMIN_MENU_ORDER = [
+    ('Widgy', (
+        'pages.Page',
+        'page_builder.Callout',
+        'form_builder.Form',
+        ('Review queue', 'review_queue.ReviewedVersionCommit'),
+    )),
+]
