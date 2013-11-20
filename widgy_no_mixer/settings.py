@@ -3,6 +3,7 @@ import os
 import socket
 import re
 import sys
+import imp
 
 # These must be set to True if SSL is in use
 # SECURE_SSL_REDIRECT = True
@@ -103,7 +104,29 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'south',
     'widgy',
+    'widgy.contrib.page_builder',
+    'widgy.contrib.form_builder',
+    'widgy.contrib.review_queue',
+
+    'filer',
+    'easy_thumbnails',
+    'compressor',
+    'scss',
+    'sorl.thumbnail',
+    'require',
+
 )
+
+WIDGY_MEZZANINE_SITE = 'widgy_no_mixer.widgy_site.site'
+
+WIDGY_ROOT = imp.find_module('widgy')[1]
+
+SCSS_IMPORTS = (
+    os.path.join(STATICFILES_DIRS[0], 'css'),
+    os.path.join(WIDGY_ROOT, 'static', 'widgy', 'css'),
+)
+
+COMPRESS_ENABLED = False
 
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.version.VersionDebugPanel',
