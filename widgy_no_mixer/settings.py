@@ -118,6 +118,7 @@ INSTALLED_APPS = (
     'require',
     'django_extensions',
     'argonauts',
+    'widgy_no_mixer',
 )
 
 WIDGY_MEZZANINE_SITE = 'widgy_no_mixer.widgy_site.site'
